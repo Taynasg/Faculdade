@@ -1,8 +1,11 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TestaFaculdade {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        CadastroAlunoRepositorio repositorio = new CadastroAlunoRepositorio();
 
         System.out.println("===========================");
         System.out.println("        Faculdade");
@@ -56,7 +59,7 @@ public class TestaFaculdade {
                         System.out.println("5 - Lançar notas (Em implementação)");
                         System.out.println("6 - Voltar ");
                         opcaoDeProfessor = scanner.nextInt();
-                        professor.ControleDasOpcoesDoProfessor(opcaoDeProfessor);
+                        professor.ControleDasOpcoesDoProfessor(opcaoDeProfessor,repositorio);
                         if ((opcaoDeProfessor == 0) || (opcaoDeProfessor > 7)) {
                             System.out.println("Opção inválida! Por favor, tente novamente!");
                         }
