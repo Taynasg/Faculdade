@@ -36,7 +36,7 @@ public class Aluno extends Pessoa {
     public void cadastrarNovoAluno() {
 
 
-        Aluno aluno = new Aluno();
+        //Aluno aluno = new Aluno();
 
         System.out.println("Preencha os dados necessários");
         System.out.println();
@@ -71,15 +71,16 @@ public class Aluno extends Pessoa {
 
 
         System.out.println();
+        this.setNome(nomeDoAluno);
+        this.setIdade(idadeDoAluno);
+        this.setSexo(sexoDoAluno);
+        this.setMatricula(matriculaDoAluno);
+        this.setCurso(cursoDoAluno);
 
-        aluno.setNome(nomeDoAluno);
-        aluno.setIdade(idadeDoAluno);
-        aluno.setSexo(sexoDoAluno);
-        aluno.setMatricula(matriculaDoAluno);
-        aluno.setCurso(cursoDoAluno);
-        alunos.add(new Aluno(nomeDoAluno, idadeDoAluno, sexoDoAluno, matriculaDoAluno,
-                cursoDoAluno));
-        System.out.println(alunos);
+
+
+        //        alunos.add(new Aluno(nomeDoAluno, idadeDoAluno, sexoDoAluno, matriculaDoAluno,
+//                cursoDoAluno));
         System.out.println("Cadastro concluído com sucesso!");
     }
 
