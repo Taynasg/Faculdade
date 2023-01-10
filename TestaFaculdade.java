@@ -1,11 +1,10 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class TestaFaculdade {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        CadastroAlunoRepositorio repositorio = new CadastroAlunoRepositorio();
+        RepositorioDeCadastros repositorio = new RepositorioDeCadastros();
+        NotasDosAlunos novasNotas = new NotasDosAlunos();
 
         System.out.println("===========================");
         System.out.println("        Faculdade");
@@ -53,14 +52,15 @@ public class TestaFaculdade {
                     do {
                         System.out.println("O que você deseja?");
                         System.out.println("1 - Mudar de turma");
-                        System.out.println("2 - Solicitar aumento(Em implementação)");
+                        System.out.println("2 - Solicitar aumento ");
                         System.out.println("3 - Registrar novo(a) aluno(a)");
-                        System.out.println("4 - Ver lista de alonos(Em implementação)");
+                        System.out.println("4 - Ver lista de alunos");
                         System.out.println("5 - Lançar notas (Em implementação)");
-                        System.out.println("6 - Voltar ");
+                        System.out.println("6 - sair");
                         opcaoDeProfessor = scanner.nextInt();
-                        professor.ControleDasOpcoesDoProfessor(opcaoDeProfessor,repositorio);
-                        if ((opcaoDeProfessor == 0) || (opcaoDeProfessor > 7)) {
+
+                        professor.ControleDasOpcoesDoProfessor(opcaoDeProfessor,repositorio,novasNotas);
+                        if ((opcaoDeProfessor == 0) || (opcaoDeProfessor > 6)) {
                             System.out.println("Opção inválida! Por favor, tente novamente!");
                         }
                         System.out.println();
