@@ -87,7 +87,7 @@ public class Professor extends Pessoa {
         }
     }
 
-    public void ControleDasOpcoesDoProfessor(int opcaoDeProfessor, RepositorioDeCadastros repositorio, NotasDosAlunos novasNotas) {
+    public void ControleDasOpcoesDoProfessor(int opcaoDeProfessor, RepositorioDeCadastros repositorio) {
 
         switch (opcaoDeProfessor) {
             case 1:
@@ -111,11 +111,14 @@ public class Professor extends Pessoa {
                 break;
 
             case 5:
+                NotasDosAlunos novasNotas = new NotasDosAlunos();
                 novasNotas.lancarNovasNotas();
                 repositorio.lancarNovasNotas(novasNotas);
                 break;
 
-
+                case 6:
+                    System.out.println(repositorio.retornarListaDeNotasCadastradas());
+                    break;
 
         }
     }

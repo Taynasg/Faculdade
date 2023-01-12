@@ -7,7 +7,6 @@ public class RepositorioDeCadastros {
 
     public void cadastrarNovoAluno(Aluno aluno) {
         alunos.add(aluno);
-
     }
 
     public List<Aluno> retornarListaDeAlunosCadastrados() {
@@ -16,7 +15,14 @@ public class RepositorioDeCadastros {
 
     public void lancarNovasNotas(NotasDosAlunos novasNotas) {
         listaDeNotas.add(novasNotas);
-        System.out.println(listaDeNotas);
-
     }
+
+    public List<NotasDosAlunos> retornarListaDeNotasCadastradas() {
+        return listaDeNotas;
+    }
+
+
+
+
+
 }

@@ -4,7 +4,6 @@ public class TestaFaculdade {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         RepositorioDeCadastros repositorio = new RepositorioDeCadastros();
-        NotasDosAlunos novasNotas = new NotasDosAlunos();
 
         System.out.println("===========================");
         System.out.println("        Faculdade");
@@ -33,10 +32,10 @@ public class TestaFaculdade {
                     do {
                         System.out.println("O que você deseja?");
                         System.out.println("1 - Cancelar matrícula");
-                        System.out.println("2 - Consultar nota(Em implementação)");
+                        System.out.println("2 - Consultar nota");
                         System.out.println("3 - Voltar");
                         opcaoDeAluno = scanner.nextInt();
-                        aluno.controleDasOpçoesDeAluno(opcaoDeAluno);
+                        aluno.controleDasOpçoesDeAluno(opcaoDeAluno,repositorio);
                         if (opcaoDeAluno <= 0 || opcaoDeAluno > 3) {
                             System.out.println("Opção inválida tente novamente!");
                         }
@@ -55,17 +54,18 @@ public class TestaFaculdade {
                         System.out.println("2 - Solicitar aumento ");
                         System.out.println("3 - Registrar novo(a) aluno(a)");
                         System.out.println("4 - Ver lista de alunos");
-                        System.out.println("5 - Lançar notas (Em implementação)");
-                        System.out.println("6 - sair");
-                        opcaoDeProfessor = scanner.nextInt();
+                        System.out.println("5 - Lançar notas");
+                        System.out.println("6 - Ver lista de notas");
+                        System.out.println("7 - sair");
+                         opcaoDeProfessor = scanner.nextInt();
 
-                        professor.ControleDasOpcoesDoProfessor(opcaoDeProfessor,repositorio,novasNotas);
-                        if ((opcaoDeProfessor == 0) || (opcaoDeProfessor > 6)) {
+                        professor.ControleDasOpcoesDoProfessor(opcaoDeProfessor,repositorio);
+                        if ((opcaoDeProfessor == 0) || (opcaoDeProfessor > 7)) {
                             System.out.println("Opção inválida! Por favor, tente novamente!");
                         }
                         System.out.println();
 
-                    } while (opcaoDeProfessor == 1 || opcaoDeProfessor <= 5 || (opcaoDeProfessor > 6));
+                    } while (opcaoDeProfessor == 1 || opcaoDeProfessor <= 6 || (opcaoDeProfessor > 7));
 
                     break;
 
@@ -76,7 +76,7 @@ public class TestaFaculdade {
                         Funcionario funcionario = new Funcionario();
                         System.out.println("O que você deseja?");
                         System.out.println("1 - Mudar de função");
-                        System.out.println("2 - Solicitar aumento(Em implementação)");
+                        System.out.println("2 - Solicitar aumento");
                         System.out.println("3 - Voltar");
                         opcaoDeFuncionario = scanner.nextInt();
                         funcionario.ControleDasOpcoesDoFuncionario(opcaoDeFuncionario);

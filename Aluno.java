@@ -16,7 +16,7 @@ public class Aluno extends Pessoa {
         this.curso = curso;
     }
 
-    public Aluno() {
+    Aluno() {
 
     }
 
@@ -78,7 +78,7 @@ public class Aluno extends Pessoa {
         System.out.println("Cadastro concluído com sucesso!");
     }
 
-    public void controleDasOpçoesDeAluno(int opcaoDeAluno) {
+    public void controleDasOpçoesDeAluno(int opcaoDeAluno, RepositorioDeCadastros repositorio) {
         Aluno aluno = new Aluno();
 
         switch (opcaoDeAluno) {
@@ -87,7 +87,7 @@ public class Aluno extends Pessoa {
                 break;
 
             case 2:
-                System.out.println("Função indisponível no momento");
+                System.out.println(repositorio.retornarListaDeNotasCadastradas());
                 break;
         }
 

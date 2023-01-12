@@ -9,10 +9,10 @@ public class Funcionario extends Pessoa {
         super(nome, idade, sexo);
     }
 
-    public Funcionario() {
+
+    Funcionario(){
 
     }
-
     int tempoDeContribuicao;
     int outraOpcao;
     int aumento;
