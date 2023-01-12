@@ -1,14 +1,10 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Professor extends Pessoa {
     Scanner scanner = new Scanner(System.in);
 
-    private List<Aluno> alunos = new ArrayList<Aluno>();
 
-
-    Professor(String nome, String idade, String sexo, String especialidade, float salario) {
+    Professor(String nome, String idade, String sexo) {
         super(nome, idade, sexo);
     }
 
@@ -91,12 +87,10 @@ public class Professor extends Pessoa {
         }
     }
 
-    public void ControleDasOpcoesDoProfessor(int opcaoDeProfessor, CadastroAlunoRepositorio repositorio) {
+    public void ControleDasOpcoesDoProfessor(int opcaoDeProfessor, RepositorioDeCadastros repositorio) {
 
         switch (opcaoDeProfessor) {
             case 1:
-                //Professor professor = new Professor(String nome, int idade, String sexo, String especialidade,float salario);
-
                 Professor professor = new Professor();
                 professor.mudarDeTurma();
                 break;
@@ -109,17 +103,23 @@ public class Professor extends Pessoa {
             case 3:
                 Aluno aluno = new Aluno();
                 aluno.cadastrarNovoAluno();
-                repositorio.cadastrarAluno(aluno);
+                repositorio.cadastrarNovoAluno(aluno);
                 break;
 
             case 4:
-
-                System.out.println(repositorio.retornarListaDeAlunosCdastrados());
+                System.out.println(repositorio.retornarListaDeAlunosCadastrados());
                 break;
 
             case 5:
-                System.out.println("Função indisponível no momento");
+                NotasDosAlunos novasNotas = new NotasDosAlunos();
+                novasNotas.lancarNovasNotas();
+                repositorio.lancarNovasNotas(novasNotas);
                 break;
+
+                case 6:
+                    System.out.println(repositorio.retornarListaDeNotasCadastradas());
+                    break;
+
         }
     }
 

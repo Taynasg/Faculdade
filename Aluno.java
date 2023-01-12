@@ -9,13 +9,14 @@ public class Aluno extends Pessoa {
 
     private List<Aluno> alunos = new ArrayList<Aluno>();
 
+
     Aluno(String nome, String idade, String sexo, String matricula, String curso) {
         super(nome, idade, sexo);
         this.matricula = matricula;
         this.curso = curso;
     }
 
-    public Aluno() {
+    Aluno() {
 
     }
 
@@ -34,9 +35,6 @@ public class Aluno extends Pessoa {
     }
 
     public void cadastrarNovoAluno() {
-
-
-        //Aluno aluno = new Aluno();
 
         System.out.println("Preencha os dados necessários");
         System.out.println();
@@ -77,14 +75,10 @@ public class Aluno extends Pessoa {
         this.setMatricula(matriculaDoAluno);
         this.setCurso(cursoDoAluno);
 
-
-
-        //        alunos.add(new Aluno(nomeDoAluno, idadeDoAluno, sexoDoAluno, matriculaDoAluno,
-//                cursoDoAluno));
         System.out.println("Cadastro concluído com sucesso!");
     }
 
-    public void controleDasOpçoesDeAluno(int opcaoDeAluno) {
+    public void controleDasOpçoesDeAluno(int opcaoDeAluno, RepositorioDeCadastros repositorio) {
         Aluno aluno = new Aluno();
 
         switch (opcaoDeAluno) {
@@ -93,7 +87,7 @@ public class Aluno extends Pessoa {
                 break;
 
             case 2:
-                System.out.println("Função indisponível no momento");
+                System.out.println(repositorio.retornarListaDeNotasCadastradas());
                 break;
         }
 
@@ -127,14 +121,11 @@ public class Aluno extends Pessoa {
 
     @Override
     public String toString() {
-        return "[Nome: " + getNome()
+        return "\n Nome: " + getNome()
                 + "\n Idade: " + getIdade()
                 + "\n Sexo: " + getSexo()
                 + "\n Matrícula: " + this.matricula
                 + "\n Cuso: " + this.curso
-                + "]";
+                + "\n ";
     }
 }
-
-
-
